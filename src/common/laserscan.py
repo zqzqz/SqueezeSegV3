@@ -239,7 +239,7 @@ class SemLaserScan(LaserScan):
       raise RuntimeError("Filename extension is not valid label file.")
 
     # if all goes well, open label
-    label = np.fromfile(filename, dtype=np.int32)
+    label = np.fromfile(filename).astype(np.int32)
     label = label.reshape((-1))
 
     # set it
